@@ -7,7 +7,13 @@ let thoughts = ["eat healthy", "crystallize thoughts", "work out hard", "sleep",
 //concentration will sort of randomly move between my thoughts, and represents what i'm currently thinking about the most
 function changeFocus() {
     setInterval(function () {
-        console.log(thoughts[Math.floor(Math.random() * thoughts.length)])
+        let selectedThought = thoughts[Math.floor(Math.random() * thoughts.length)]
+        console.log(selectedThought)
+        let para = document.createElement("p");
+        let node = document.createTextNode(selectedThought)
+        para.appendChild(node)
+        let element = document.getElementById("thoughts")
+        element.appendChild(para)
     }, 3000)
 }
 
